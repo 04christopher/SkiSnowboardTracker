@@ -25,5 +25,6 @@ would actually use in my active life, and I can share it with others in Vancouve
 - As a user, I want to be able to see my personal bests.
 - As a user, I want to be able to add a ski trail to a Mountain.
 - As a user, I want to be able to see a list of run-times.
+- As a user, I want to be able to check the total distance of my runs for the day.
 
 An example of text with **bold** and *italic* fonts.  
