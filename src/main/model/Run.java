@@ -7,8 +7,6 @@ public class Run {
     public Run(Trail trail, int time) {
         this.trail = trail;
         this.time = time;
-
-        trail.addRunTime(time);
     }
 
     public Trail getTrail() {

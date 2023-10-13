@@ -18,11 +18,13 @@ public class TripTest {
 
     @BeforeEach
     public void runBefore() {
-        r1 = new Run(theCut, 300);
-        r2 = new Run(purgatory, 600);
+        grouse = new Mountain("Grouse Mountain");
 
         theCut = new Trail("The Cut", 1100, 201, 1, grouse, true, false);
         purgatory = new Trail("Purgatory", 538, 196, 4, grouse, false, false);
+
+        r1 = new Run(theCut, 300);
+        r2 = new Run(purgatory, 600);
 
         ArrayList<Run> runs = new ArrayList<Run>();
         vaycay = new Trip("Vacation!", runs);

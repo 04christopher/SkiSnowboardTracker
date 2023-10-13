@@ -16,6 +16,8 @@ public class Trip {
         return this.runs;
     }
 
+
+    //EFFECTS: gets the total distance travelled between all runs this trip.
     public int distanceTravelled() {
         int totalDistance = 0;
         for (Run run : runs) {
@@ -26,7 +28,7 @@ public class Trip {
 
 
     //MODIFIES: Trail (all of the trails in this trip)
-    //EFFECTS: adds the time of each run to each trail's list of run times.
+    //EFFECTS: adds the time of each run to each trail's list of run times,
     //         adds the total distance of the trip
     public void addTripToRecord() {
         for (Run run : runs) {

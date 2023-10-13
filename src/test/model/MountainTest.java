@@ -60,11 +60,22 @@ public class MountainTest   {
     void testAddToTotalDistance() {
         grouse.addToTotalDistance(50);
         assertEquals(50, grouse.getTotalDistanceSkied());
+        grouse.addToTotalDistance(27);
+        assertEquals(77, grouse.getTotalDistanceSkied());
     }
 
     @Test
     void testAddToTotalRuns() {
         grouse.addToTotalRuns(1);
         assertEquals(1, grouse.getRunsDone());
+        grouse.addToTotalRuns(5);
+        assertEquals(6, grouse.getRunsDone());
+    }
+    @Test
+    void testAddTrails(){
+        //this method called when any Trail is initialized
+        assertEquals(theCut, grouse.getTrails().get(0));
+        assertEquals(purgatory, grouse.getTrails().get(1));
+        assertEquals(2, grouse.getNumTrails());
     }
 }

@@ -82,6 +82,15 @@ public class Mountain {
     public int getNumTrips() {
         return trips.size();
     }
+
+    public ArrayList<String> getTrailNames() {
+        ArrayList<String> names = new ArrayList<String>();
+
+        for (Trail trail: trails) {
+            names.add(trail.getName());
+        }
+        return names;
+    }
 }
 
 

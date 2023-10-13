@@ -24,5 +24,6 @@ would actually use in my active life, and I can share it with others in Vancouve
 - As a user, I want to be able to record lists of trips (Ski-trail combinations) that I've done.
 - As a user, I want to be able to see my personal bests and average times.
 - As a user, I want to be able to add a ski trail to a Mountain.
+- As a user, I want to be able to see all the trails on a Mountain.
 - As a user, I want to be able to see a list of run-times.
 - As a user, I want to be able to check the total distance of my runs for the day.

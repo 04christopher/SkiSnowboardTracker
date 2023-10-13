@@ -4,8 +4,10 @@ import java.time.LocalTime;
 import model.Mountain;
 import model.Run;
 import model.Trail;
+import model.Trip;
 
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MountainApp {
@@ -70,12 +72,21 @@ public class MountainApp {
     }
 
     public void recordTrip() {
+        System.out.println("Enter a name/date for this trip: ");
+        String nameOrDate = input.nextLine();
+
+        input.nextLine();// this line fixes the scanner skipping
+
         System.out.println("How many runs did you do on this trip?");
         int amount = input.nextInt();
 
+        ArrayList<Run> empty = new ArrayList<Run>();
+        Trip trip = new Trip(nameOrDate, empty);
+
         for (int i = 0; i < amount; i++) {
-            enterRun();
+            trip.addRun(enterRun());
         }
+        trip.addTripToRecord();
         System.out.println("Trip recorded!");
     }
 
@@ -103,8 +114,10 @@ public class MountainApp {
         }
     }
 
+    @SuppressWarnings("methodlength")
     public void addTrailToMountain() {
         System.out.println("What is the name of this trail?");
+        input.nextLine();
         String name = input.nextLine();
         System.out.println("What is the length of this trail? (in metres)");
         int length = input.nextInt();
@@ -118,11 +131,20 @@ public class MountainApp {
         int dif = input.nextInt();
         System.out.println("What mountain is this trail on? ");
         //leave empty for this phase
-        System.out.println("Is this trail a night run? (True/False)");
-        boolean nr = input.nextBoolean();
-        System.out.println("Is this trail a night run? (True/False)");
-        boolean gl = input.nextBoolean();
+        System.out.println("Pretend you answered Grouse. next!");
+        System.out.println("Is this trail a night run? (y/n)");
+        boolean nr = false;
+        input.nextLine(); //bug fix
+        if (input.nextLine() == "y") {
+            nr = true;
+        }
+        System.out.println("Is this trail gladed terrain? (y/n)");
+        boolean gl = false;
+        if (input.nextLine() == "y") {
+            gl = true;
+        }
         Trail t1 = new Trail(name, length, descent, dif, grouse, nr, gl);
+        System.out.println("Trail " + name + " added!");
     }
 
     @SuppressWarnings("methodlength")
@@ -160,7 +182,7 @@ public class MountainApp {
         return matchingTrail;
     }
 
-    public void enterRun() {
+    public Run enterRun() {
         Trail matchingTrail = selectTrail();
 
         System.out.println("Enter time (format mm:ss, like 05:30): ");
@@ -173,7 +195,7 @@ public class MountainApp {
 
         Run thisRun = new Run(matchingTrail, runTime);
         System.out.println("Run on " + matchingTrail.getName() + " with time " + localTime + " recorded.");
-        
+        return thisRun;
     }
 
     public void printTrail(Trail trail) {
@@ -198,10 +220,11 @@ public class MountainApp {
     }
 
     public void mountainStats() {
-        System.out.println("Showing statistics for" + grouse);
+        System.out.println("Showing statistics for" + grouse.getName());
         System.out.println("Total runs done: " + grouse.getRunsDone());
         System.out.println("Total distance skied/snowboarded: " + grouse.getTotalDistanceSkied());
-        System.out.println("Total number of trips: " + grouse.getTrips());
+        System.out.println("Total number of trips: " + grouse.getNumTrips());
+        System.out.println("List of trails on this mountain: " + grouse.getTrailNames());
     }
 
     public void trailStats() {
@@ -224,7 +247,7 @@ public class MountainApp {
 
         System.out.println("Your Best Time: " + selectedTrail.getBestTime());
         System.out.println("Your Average Time: " + selectedTrail.getAverageTime());
-        System.out.println("You have done this run " + selectedTrail.getNumTimesDone() + "times.");
+        System.out.println("You have done this run " + selectedTrail.getNumTimesDone() + " times.");
         System.out.println("Here is a list of your run times: " + selectedTrail.getRunTimesAsFormattedTime());
     }
 }
