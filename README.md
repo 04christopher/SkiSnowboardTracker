@@ -9,7 +9,7 @@ For each run, you can also track your own information, such as the amount of tim
 total runs done,
 total elevation and length travelled, and more.
 
-This application will be useful to anyone who Skiis or Snowboards in the lower mainland! Users can use this application to look at information
+This application will be useful to anyone who Skis or Snowboards in the lower mainland! Users can use this application to look at information
 and track and plan  their own trips.
 
 I'm interested in building this project because this is an application with features that I 
@@ -20,11 +20,9 @@ would actually use in my active life, and I can share it with others in Vancouve
 
 - As a user, I want to be able to track the amount of times I have done a Ski Run.
 - As a user, I want to be able to track the time it took me to do a Ski run.
-- As a user, I want to be able to see information about any Ski run, such as difficulty, length,elevation, etc.
-- As a user, I want to be able to record lists of trips (Ski-trail combinations) that I've done and want to do.
-- As a user, I want to be able to see my personal bests.
+- As a user, I want to be able to see information about any Ski run, such as difficulty, length, elevation, etc.
+- As a user, I want to be able to record lists of trips (Ski-trail combinations) that I've done.
+- As a user, I want to be able to see my personal bests and average times.
 - As a user, I want to be able to add a ski trail to a Mountain.
 - As a user, I want to be able to see a list of run-times.
 - As a user, I want to be able to check the total distance of my runs for the day.
-
-An example of text with **bold** and *italic* fonts.  
