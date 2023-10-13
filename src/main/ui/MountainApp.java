@@ -6,21 +6,22 @@ import model.Run;
 import model.Trail;
 import model.Trip;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Mountain teller application
 public class MountainApp {
 
     private Scanner input;
     private Mountain grouse;
 
-
+    //EFFECT: runs the mountain app
     public MountainApp() {
         runMountain();
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: processes user input
     private void runMountain() {
         boolean keepGoing = true;
         String command = null;
@@ -40,6 +41,8 @@ public class MountainApp {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: processes user command
     private void processCommand(String command) {
         if (command.equals("r")) {
             recordTrip();
@@ -52,6 +55,8 @@ public class MountainApp {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: displayes menu of options to user
     private void displayMenu() {
         System.out.println("What would you like to do?");
         System.out.println("r -> record a trip");
@@ -60,6 +65,8 @@ public class MountainApp {
         System.out.println("q -> quit");
     }
 
+    // MODIFIES: this
+    // EFFECTS: initializes grouse mountain, 5 trails, and a scanner
     public void init() {
         grouse = new Mountain("Grouse Mountain");
         Trail theCut = new Trail("The Cut", 1100, 201, 1, grouse, true, false);
@@ -71,6 +78,8 @@ public class MountainApp {
         input.useDelimiter("\n");
     }
 
+    //MODIFIES: this
+    //EFFECTS: records a trip from the user and adds it to grouse.
     public void recordTrip() {
         System.out.println("Enter a name/date for this trip: ");
         String nameOrDate = input.nextLine();
@@ -87,9 +96,12 @@ public class MountainApp {
             trip.addRun(enterRun());
         }
         trip.addTripToRecord();
+        grouse.addTrip(trip);
         System.out.println("Trip recorded!");
     }
 
+    //MODIFIES: this
+    //EFFECTS: process user input for stats menu
     public void checkStats()  {
         String command = null;
         displayStatMenu();
@@ -98,12 +110,16 @@ public class MountainApp {
         processStatCommand(command);
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays menu for options on statistics
     public void displayStatMenu() {
         System.out.println("What would you like to see information on?");
         System.out.println("m -> a mountain");
         System.out.println("t -> a trail");
     }
 
+    //MODIFIES: this
+    //EFFECTS: processes user command
     public void processStatCommand(String command) {
         if (command.equals("m")) {
             mountainStats();
@@ -114,6 +130,10 @@ public class MountainApp {
         }
     }
 
+    //MODIFIES: this
+    //EFFECTS: takes information from user and adds a trail to mountain
+    //REASON FOR METHOD LENGTH: this method is long because a Trail has many fields,
+    // but the function cannot be broken down.
     @SuppressWarnings("methodlength")
     public void addTrailToMountain() {
         System.out.println("What is the name of this trail?");
@@ -147,6 +167,11 @@ public class MountainApp {
         System.out.println("Trail " + name + " added!");
     }
 
+    //MODIFIES: this
+    //EFFECTS: prompts the user to select a trail that exists, or add a new one
+    // if no trail exists.
+    //REASON FOR METHOD LENGTH: this method makes the most sense to stay together like this
+    //as it is only searching for a trail that matches user input.
     @SuppressWarnings("methodlength")
     public Trail selectTrail() {
         input = new Scanner(System.in);
@@ -164,7 +189,6 @@ public class MountainApp {
                     break; // exit loop when match found
                 }
             }
-
             if (matchingTrail != null) {
                 validSelection = true;
             } else {
@@ -182,6 +206,8 @@ public class MountainApp {
         return matchingTrail;
     }
 
+    //MODIFIES: this
+    //EFFECTS: Records a run entered by the user, and translates time to seconds.
     public Run enterRun() {
         Trail matchingTrail = selectTrail();
 
@@ -198,15 +224,8 @@ public class MountainApp {
         return thisRun;
     }
 
-    public void printTrail(Trail trail) {
-        System.out.println("Showing stats for " + trail.getName() + ":");
-        System.out.println("Length: " + trail.getLength() + "m");
-        System.out.println("Difficulty: " + translateDifficulty(trail.getDifficulty()));
-        System.out.println();
-        System.out.println();
-        System.out.println();
-    }
-
+    //MODIFIES: this
+    //EFFECTS: takes difficulty integer and returns the english translation
     public String translateDifficulty(int n) {
         if (n == 1) {
             return "Green (Beginner)";
@@ -219,6 +238,8 @@ public class MountainApp {
         }
     }
 
+    //MODIFIES: this
+    //EFFECTS: prints out statistics of a mountain
     public void mountainStats() {
         System.out.println("Showing statistics for" + grouse.getName());
         System.out.println("Total runs done: " + grouse.getRunsDone());
@@ -227,6 +248,8 @@ public class MountainApp {
         System.out.println("List of trails on this mountain: " + grouse.getTrailNames());
     }
 
+    //MODIFIES: this
+    //EFFECTS: prints out statistics of a selected trail
     public void trailStats() {
         Trail selectedTrail = selectTrail();
         System.out.println("Showing statistics for " + selectedTrail.getName());
