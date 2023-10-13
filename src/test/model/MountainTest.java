@@ -78,4 +78,11 @@ public class MountainTest   {
         assertEquals(purgatory, grouse.getTrails().get(1));
         assertEquals(2, grouse.getNumTrails());
     }
+    @Test
+    void testGetTrailNames(){
+        ArrayList<String> test = new ArrayList<>();
+        test.add("The Cut");
+        test.add("Purgatory");
+        assertEquals(test, grouse.getTrailNames());
+    }
 }

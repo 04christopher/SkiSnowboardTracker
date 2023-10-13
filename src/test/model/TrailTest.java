@@ -82,5 +82,40 @@ class TrailTest {
         assertEquals(100, theCut.getBestTime());
     }
 
+    @Test
+    void testGetRunTimesAsFormattedTime(){
+        ArrayList<String> testList = new ArrayList<String>();
 
+        theCut.addRunTime(300);
+        theCut.addRunTime(200);
+        theCut.addRunTime(300);
+        theCut.addRunTime(250);
+
+        testList.add("5:00");
+        testList.add("3:20");
+        testList.add("5:00");
+        testList.add("4:10");
+        assertEquals(testList, theCut.getRunTimesAsFormattedTime());
+    }
+
+    @Test
+    void testGetNumTimesDone(){
+        theCut.addRunTime(300);
+        theCut.addRunTime(200);
+        theCut.addRunTime(300);
+        theCut.addRunTime(250);
+
+        assertEquals(4, theCut.getNumTimesDone());
+    }
+
+    @Test
+    void testHaveDoneBefore(){
+        assertFalse(theCut.haveDoneBefore());
+        theCut.addRunTime(300);
+        theCut.addRunTime(200);
+        theCut.addRunTime(300);
+        theCut.addRunTime(250);
+
+        assertTrue(theCut.haveDoneBefore());
+    }
 }

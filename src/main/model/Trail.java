@@ -1,6 +1,5 @@
 package model;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Trail {
@@ -91,6 +90,9 @@ public class Trail {
             int minutes = seconds / 60;
             int remainingSeconds = seconds % 60;
             String formattedTime = minutes + ":" + remainingSeconds;
+            if (remainingSeconds < 10) {
+                formattedTime = minutes + ":0" + remainingSeconds;
+            }
             formattedTimes.add(formattedTime);
         }
         return formattedTimes;
@@ -113,6 +115,6 @@ public class Trail {
     }
 
     public boolean haveDoneBefore() {
-        return runTimes.isEmpty();
+        return !runTimes.isEmpty();
     }
 }

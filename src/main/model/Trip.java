@@ -12,11 +12,6 @@ public class Trip {
         this.nameOrDate = nameOrDate;
     }
 
-    public ArrayList<Run> getTrip() {
-        return this.runs;
-    }
-
-
     //EFFECTS: gets the total distance travelled between all runs this trip.
     public int distanceTravelled() {
         int totalDistance = 0;

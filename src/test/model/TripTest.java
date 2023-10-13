@@ -31,6 +31,13 @@ public class TripTest {
     }
 
     @Test
+    public void testConstructor(){
+        ArrayList<Run> test = new ArrayList<Run>();
+        assertEquals("Vacation!", vaycay.getNameOrDate());
+        assertEquals(test, vaycay.getRuns());
+    }
+
+    @Test
     public void testDistanceTravelled() {
         vaycay.addRun(r1);
         vaycay.addRun(r2);
@@ -44,5 +51,12 @@ public class TripTest {
         assertEquals(1, vaycay.getRunsDone());
     }
     //still need to add a test?
-
+    @Test
+    public void testAddTripToRecord(){
+        vaycay.addRun(r1);
+        vaycay.addRun(r2);
+        vaycay.addTripToRecord();
+        assertEquals(2, grouse.getRunsDone());
+        assertEquals(1638, grouse.getTotalDistanceSkied());
+    }
 }
