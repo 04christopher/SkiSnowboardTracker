@@ -35,6 +35,7 @@ class TrailTest {
 
         assertEquals(theCut, grouse.getTrails().get(0));
         assertEquals(1, grouse.getNumTrails());
+        assertEquals(0, theCut.getNumTimesDone());
     }
 
     @Test
