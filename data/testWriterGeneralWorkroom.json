@@ -1,0 +1,19 @@
+{
+    "mountains": [
+        {
+            "runsDone": 0,
+            "totalDistanceSkied": 0,
+            "trips": [],
+            "name": "grouse",
+            "trails": []
+        },
+        {
+            "runsDone": 0,
+            "totalDistanceSkied": 0,
+            "trips": [],
+            "name": "whistler",
+            "trails": []
+        }
+    ],
+    "name": "bc"
+}

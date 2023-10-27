@@ -8,6 +8,8 @@ import model.Run;
 import model.Trail;
 import model.Trip;
 import model.Mappy;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import persistence.JsonReader;
 import persistence.JsonWriter;
