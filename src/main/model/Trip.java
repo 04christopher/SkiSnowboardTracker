@@ -1,6 +1,10 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Trip {
 
@@ -47,5 +51,23 @@ public class Trip {
 
     public String getNameOrDate() {
         return nameOrDate;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("nameOrDate", this.nameOrDate);
+        json.put("runs", runsToJson());
+        return json;
+    }
+
+    private JSONArray runsToJson() {
+        JSONArray jsonArray = new JSONArray();
+        Iterator var2 = this.runs.iterator();
+
+        while (var2.hasNext()) {
+            Run r = (Run) var2.next();
+            jsonArray.put(r.toJson());
+        }
+        return jsonArray;
     }
 }

@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 public class Run {
     private final Trail trail;
     private final int time;
@@ -17,4 +19,10 @@ public class Run {
         return time;
     }
 
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("trail", this.trail.getName());
+        json.put("time", this.time);
+        return json;
+    }
 }

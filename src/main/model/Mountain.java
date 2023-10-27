@@ -1,6 +1,10 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Mountain {
     private final String name; //name of this mountain
@@ -67,8 +71,16 @@ public class Mountain {
         return runsDone;
     }
 
+    public void setRunsDone(int r) {
+        runsDone = r;
+    }
+
     public int getTotalDistanceSkied() {
         return totalDistanceSkied;
+    }
+
+    public void setTotalDistanceSkied(int d) {
+        totalDistanceSkied = d;
     }
 
     public String getName() {
@@ -90,6 +102,40 @@ public class Mountain {
             names.add(trail.getName());
         }
         return names;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", this.name);
+        json.put("runsDone", this.runsDone);
+        json.put("totalDistanceSkied", this.totalDistanceSkied);
+
+        json.put("trails", trailsToJson());
+        json.put("trips", tripsToJson());
+
+        return json;
+    }
+
+    private JSONArray trailsToJson() {
+        JSONArray jsonArray = new JSONArray();
+        Iterator var2 = this.trails.iterator();
+
+        while (var2.hasNext()) {
+            Trail t = (Trail)var2.next();
+            jsonArray.put(t.toJson());
+        }
+        return jsonArray;
+    }
+
+    private JSONArray tripsToJson() {
+        JSONArray jsonArray = new JSONArray();
+        Iterator var2 = this.trips.iterator();
+
+        while (var2.hasNext()) {
+            Trip t = (Trip)var2.next();
+            jsonArray.put(t.toJson());
+        }
+        return jsonArray;
     }
 }
 

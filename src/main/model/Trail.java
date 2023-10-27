@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class Trail {
@@ -116,5 +119,21 @@ public class Trail {
 
     public boolean haveDoneBefore() {
         return !runTimes.isEmpty();
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", this.name);
+        json.put("length", this.length);
+        json.put("descent", this.descent);
+        json.put("difficulty", this.difficulty);
+        json.put("nightrun", this.nightRun);
+        json.put("gladed", this.gladedTerrain);
+        json.put("bestTime", this.bestTime);
+
+        JSONArray runTimesArray = new JSONArray(this.runTimes);
+        json.put("runTimes", runTimesArray);
+
+        return json;
     }
 }
