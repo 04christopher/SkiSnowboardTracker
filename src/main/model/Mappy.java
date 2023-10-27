@@ -6,10 +6,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+//This class is a map, containing all mountains that exist.
 public class Mappy {
     private ArrayList<Mountain> mountains;
     private String name;
 
+    //EFFECTS: constructs a map with a name;
     public Mappy(String name) {
         this.mountains = new ArrayList<Mountain>();
         this.name = name;
@@ -46,7 +48,7 @@ public class Mappy {
         return jsonArray;
     }
 
-    //
+    //EFFECTS: takes a name returns a trail object that exists on the map
     public Trail findTrailByName(String trailName) {
         for (Mountain m : mountains) {
             for (Trail trail : m.getTrails()) {

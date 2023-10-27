@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+//A mountain that has a name, and a list of trails and trips, along with some statistics about the user's performance
 public class Mountain {
     private final String name; //name of this mountain
     private ArrayList<Trail> trails; // list of trails on a Mountain
@@ -95,6 +96,7 @@ public class Mountain {
         return trips.size();
     }
 
+    //EFFECTS: returns all trail names
     public ArrayList<String> getTrailNames() {
         ArrayList<String> names = new ArrayList<String>();
 
@@ -104,6 +106,7 @@ public class Mountain {
         return names;
     }
 
+    //EFFECTS: creates a json object of mountain
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", this.name);
@@ -116,6 +119,7 @@ public class Mountain {
         return json;
     }
 
+    //EFFECTS: creates a json array of trails in mountain
     private JSONArray trailsToJson() {
         JSONArray jsonArray = new JSONArray();
         Iterator var2 = this.trails.iterator();
@@ -127,6 +131,7 @@ public class Mountain {
         return jsonArray;
     }
 
+    //EFFECTS: creates a json array of trips in mountain
     private JSONArray tripsToJson() {
         JSONArray jsonArray = new JSONArray();
         Iterator var2 = this.trips.iterator();

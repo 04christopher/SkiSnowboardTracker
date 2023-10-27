@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
-//Mountain teller application
+//Mappy application
 public class MountainApp {
 
     private Scanner input;
@@ -56,6 +56,7 @@ public class MountainApp {
         }
     }
 
+    //EFFECTS: saves the state of Mappy to json file
     private void saveMappy() {
         try {
             this.jsonWriter.open();
@@ -67,6 +68,7 @@ public class MountainApp {
         }
     }
 
+    //loads a state of mappy from json file
     private void loadMappy() {
         try {
             this.bc = this.jsonReader.read();
@@ -370,6 +372,7 @@ public class MountainApp {
         System.out.println("Here is a list of your run times: " + selectedTrail.getRunTimesAsFormattedTime());
     }
 
+    //EFFECTS: prints out all mountains on map
     public void seeMountains() {
         for (Mountain m : bc.getMountains()) {
             System.out.println(m.getName());

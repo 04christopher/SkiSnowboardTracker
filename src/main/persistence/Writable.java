@@ -6,7 +6,7 @@
 
 package persistence;
 
-import org.json.JSONObject;  //taken from json exammple
+import org.json.JSONObject;  //taken from json example
 
 public interface Writable {
     JSONObject toJson();

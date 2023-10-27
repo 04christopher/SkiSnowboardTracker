@@ -6,11 +6,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+//Represents a list of runs, AKA a trip that a user has done. Has a name and a list of runs.
 public class Trip {
 
     private final String nameOrDate;
     private ArrayList<Run> runs;
 
+    //EFFECTS: creates run with name nameOrDate, and a list of runs
     public Trip(String nameOrDate, ArrayList<Run> runs) {
         this.runs = runs;
         this.nameOrDate = nameOrDate;
@@ -53,6 +55,7 @@ public class Trip {
         return nameOrDate;
     }
 
+    //EFFECTS: creates a json object of trip
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("nameOrDate", this.nameOrDate);
@@ -60,6 +63,7 @@ public class Trip {
         return json;
     }
 
+    //EFFECTS: converts run array to json objects of run
     private JSONArray runsToJson() {
         JSONArray jsonArray = new JSONArray();
         Iterator var2 = this.runs.iterator();

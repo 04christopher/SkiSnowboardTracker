@@ -18,6 +18,7 @@ import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//Represents a reader that reads a map from data stored in JSON file
 public class JsonReader {
     private String source;
 
@@ -25,12 +26,15 @@ public class JsonReader {
         this.source = source;
     }
 
+    // EFFECTS: reads mappy from file and returns it;
+    // throws IOException if an error occurs reading data from file
     public Mappy read() throws IOException {
         String jsonData = this.readFile(this.source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return this.parseMappy(jsonObject);
     }
 
+    // EFFECTS: reads source file as string and returns it
     private String readFile(String source) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
         Stream<String> stream = Files.lines(Paths.get(source), StandardCharsets.UTF_8);
@@ -58,6 +62,7 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
+    // EFFECTS: parses mappy from JSON object and returns it
     private Mappy parseMappy(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         Mappy mappy = new Mappy(name);
@@ -65,6 +70,8 @@ public class JsonReader {
         return mappy;
     }
 
+    // MODIFIES: mappy
+    // EFFECTS: parses thingies from JSON object and adds them to workroom
     private void addMountains(Mappy m, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("mountains");
         Iterator var4 = jsonArray.iterator();
@@ -76,7 +83,7 @@ public class JsonReader {
     }
 
     // MODIFIES: mappy
-    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    // EFFECTS: parses mountains from JSON object and adds it to mappy
     private void addMountain(Mappy m, JSONObject mountainObject) {
         String name = mountainObject.getString("name");
         int runsDone = mountainObject.getInt("runsDone");
@@ -87,11 +94,12 @@ public class JsonReader {
         mountain.setTotalDistanceSkied(totalDistanceSkied);
         m.addMountain(mountain);
 
-        // Create trails for the mountain and add them to the mountain
         addTrails(mountain, mountainObject.getJSONArray("trails"));
         addTrips(m, mountain, mountainObject.getJSONArray("trips"));
     }
 
+    // MODIFIES: mountain
+    // EFFECTS: parses trails from JSON object and adds it to mountain
     private void addTrails(Mountain mountain, JSONArray trailsArray) {
         for (Object trailObj : trailsArray) {
             JSONObject trailJson = (JSONObject) trailObj;
@@ -105,6 +113,8 @@ public class JsonReader {
         }
     }
 
+    // MODIFIES: mountain
+    // EFFECTS: parses trips from JSON object and adds it to mountain
     private void addTrips(Mappy m, Mountain mountain, JSONArray tripsArray) {
         for (Object tripObj : tripsArray) {
             JSONObject tripJson = (JSONObject) tripObj;
@@ -116,6 +126,8 @@ public class JsonReader {
         }
     }
 
+    // MODIFIES: trip
+    // EFFECTS: parses runes from JSON object and adds it to trip
     private void addRuns(Mappy m, Trip trip, JSONArray runsArray) {
         for (Object runObj : runsArray) {
             JSONObject runJson = (JSONObject) runObj;

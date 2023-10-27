@@ -5,6 +5,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+//Representing a trail on a mountain that you ski or snowboard. It has a name, location, length, difficulty, elevation,
+//more information, and a list of run times that a user has achieved.
 public class Trail {
     private final String name; //name of trail
     private final Mountain mountain; //the mountain this run is on
@@ -87,6 +89,7 @@ public class Trail {
         return name;
     }
 
+    //EFFECTS: gets the run times as a formatted time of form (mm:ss)
     public ArrayList<String> getRunTimesAsFormattedTime() {
         ArrayList<String> formattedTimes = new ArrayList<>();
         for (int seconds : runTimes) {
@@ -121,6 +124,7 @@ public class Trail {
         return !runTimes.isEmpty();
     }
 
+    //EFFECTS: creates a json object of trail
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", this.name);
