@@ -1,6 +1,7 @@
 package model;
 
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -118,5 +119,11 @@ class TrailTest {
         theCut.addRunTime(250);
 
         assertTrue(theCut.haveDoneBefore());
+    }
+
+    @Test
+    void testCompiles() {
+        JSONObject json = theCut.toJson();
+        assertTrue(!(json == null));
     }
 }
