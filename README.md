@@ -29,3 +29,5 @@ would actually use in my active life, and I can share it with others in Vancouve
 - As a user, I want to be able to check the total distance of my runs for the day.
 - As a user, I want to be able to save the state of a mountain, and all trails and trips I have added to a mountain, if I choose.
 - As a user, I want to be able to load my previous trails and mountains from a closed state, if I choose.
+- As a user, I want to be able to see a graphical representation of the difficulty of a trail. (Through color)
+- As a user, I want to be able to see a map of a mountain and the trails on it.
