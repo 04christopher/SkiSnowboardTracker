@@ -69,7 +69,7 @@ public class MountainApp {
     }
 
     //loads a state of mappy from json file
-    private void loadMappy() {
+    public void loadMappy() {
         try {
             this.bc = this.jsonReader.read();
             System.out.println("Loaded map from ./data/mountain.json");
@@ -208,16 +208,10 @@ public class MountainApp {
         String mountain = input.nextLine();
         Mountain matchingMountain = selectMountain();
         System.out.println("Is this trail a night run? (y/n)");
-        boolean nr = false;
+        boolean nr = input.nextLine().equalsIgnoreCase("y");
         input.nextLine(); //bug fix
-        if (input.nextLine() == "y") {
-            nr = true;
-        }
         System.out.println("Is this trail gladed terrain? (y/n)");
-        boolean gl = false;
-        if (input.nextLine() == "y") {
-            gl = true;
-        }
+        boolean gl = input.nextLine().equalsIgnoreCase("y");
         Trail t1 = new Trail(name, length, descent, dif, matchingMountain, nr, gl);
         System.out.println("Trail " + name + " added!");
     }
@@ -378,5 +372,9 @@ public class MountainApp {
             System.out.println(m.getName());
         }
         System.out.println("That's it!");
+    }
+
+    public Mappy getMappy() {
+        return this.bc;
     }
 }

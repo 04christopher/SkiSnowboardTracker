@@ -25,7 +25,7 @@ public class RunTest {
         r1 = new Run(theCut, 300);
         r2 = new Run(purgatory, 600);
 
-        ArrayList<Run> runs = new ArrayList<Run>();
+        ArrayList<Run> runs = new ArrayList<>();
         vaycay = new Trip("Vacation!", runs);
     }
 

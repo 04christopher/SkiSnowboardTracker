@@ -20,7 +20,7 @@ would actually use in my active life, and I can share it with others in Vancouve
 
 - As a user, I want to be able to track the amount of times I have done a Ski Run.
 - As a user, I want to be able to track the time it took me to do a Ski run.
-- As a user, I want to be able to see information about any Ski run, such as difficulty, length, elevation, etc.
+  - As a user, I want to be able to see information about any Ski run, such as difficulty, length, elevation, etc.
 - As a user, I want to be able to record lists of trips (Ski-trail combinations) that I've done.
 - As a user, I want to be able to see my personal bests and average times.
 - As a user, I want to be able to add a ski trail to a Mountain.
