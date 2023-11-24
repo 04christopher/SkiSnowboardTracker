@@ -1,48 +1,41 @@
 {
-    "mountains": [
-        {
-            "runsDone": 3,
-            "totalDistanceSkied": 1238,
-            "trips": [{
-                "nameOrDate": "",
-                "runs": [
-                    {
-                        "trail": "The Cut",
-                        "time": 208
-                    }
-                ]
-            }],
-            "name": "grouse",
-            "trails": [
-                {
-                    "difficulty": 1,
-                    "descent": 201,
-                    "nightrun": true,
-                    "bestTime": 208,
-                    "gladed": false,
-                    "name": "The Cut",
-                    "length": 1100,
-                    "runTimes": [208]
-                },
-                {
-                    "difficulty": 4,
-                    "descent": 196,
-                    "nightrun": false,
-                    "bestTime": 999999999,
-                    "gladed": false,
-                    "name": "Purgatory",
-                    "length": 538,
-                    "runTimes": []
-                }
-            ]
-        },
-        {
-            "runsDone": 0,
-            "totalDistanceSkied": 0,
-            "trips": [],
-            "name": "seymour",
-            "trails": []
-        }
-    ],
+    "mountains": [{
+        "runsDone": 0,
+        "totalDistanceSkied": 0,
+        "trips": [],
+        "name": "Grouse",
+        "trails": [
+            {
+                "difficulty": 1,
+                "descent": 201,
+                "nightrun": true,
+                "bestTime": 999999999,
+                "gladed": false,
+                "name": "The Cut",
+                "length": 1100,
+                "runTimes": []
+            },
+            {
+                "difficulty": 4,
+                "descent": 196,
+                "nightrun": false,
+                "bestTime": 999999999,
+                "gladed": false,
+                "name": "Purgatory",
+                "length": 538,
+                "runTimes": []
+            },
+            {
+                "difficulty": 3,
+                "descent": 4123,
+                "nightrun": true,
+                "bestTime": 999999999,
+                "gladed": false,
+                "name": "Jacob's Traijl",
+                "length": 1234,
+                "runTimes": []
+            }
+        ]
+    }],
     "name": "The Map"
 }

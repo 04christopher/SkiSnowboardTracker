@@ -133,7 +133,7 @@ public class JsonReader {
             JSONObject runJson = (JSONObject) runObj;
             String trailName = runJson.getString("trail");
             int time = runJson.getInt("time");
-            // Find the Trail object by name (trailName) in the mountain
+            //find the Trail object by name (trailName) in the mountain
             Trail matchingTrail = m.findTrailByName(trailName);
             if (matchingTrail != null) {
                 Run run = new Run(matchingTrail, time);

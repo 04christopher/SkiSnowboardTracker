@@ -31,3 +31,10 @@ would actually use in my active life, and I can share it with others in Vancouve
 - As a user, I want to be able to load my previous trails and mountains from a closed state, if I choose.
 - As a user, I want to be able to see a graphical representation of the difficulty of a trail. (Through color)
 - As a user, I want to be able to see a map of a mountain and the trails on it.
+
+## Instructions for Grader:
+- To generate a trail, click See Mountains, and then click on a mountain (Grouse), then click Add Trail.
+- To see the statistics and trails on a mountain, click on a mountain (Grouse), then click See Trails.
+- There is a header with text over it when the program starts (it is a picture of mountains).
+- To save the state of the file, click the save button on the first frame.
+- To reload the state of the file, click the load button on the first frame.

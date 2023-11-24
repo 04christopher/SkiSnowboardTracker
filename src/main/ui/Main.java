@@ -8,6 +8,6 @@ public class Main {
     public static void main(String[] args) {
         // MountainApp();
         Mappy initMap = new Mappy("BC");
-        new TestingFrame(initMap);
+        new MountainSwingApp(initMap);
     }
 }
