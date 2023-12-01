@@ -50,7 +50,20 @@ would actually use in my active life, and I can share it with others in Vancouve
 - Thu Nov 30 17:09:48 PST 2023: Added mountain Grouse to map.
 - Thu Nov 30 17:09:48 PST 2023: Added trail The Cut to Grouse
 - Thu Nov 30 17:09:48 PST 2023: Added trail Purgatory to Grouse
-- Thu Nov 30 17:09:48 PST 2023: Added trail Jacob's Traijl to Grouse
+- Thu Nov 30 17:09:48 PST 2023: Added trail Jacob's Trail to Grouse
 - Thu Nov 30 17:10:24 PST 2023: Recorded trip Vacation!
 - Thu Nov 30 17:10:41 PST 2023: Added trail EventLoggingTrail to Grouse
 - Thu Nov 30 17:10:53 PST 2023: Added mountain Seymour!!!! to map.
+
+## Phase 4: Task 3
+There are many problems I ran into that made me think about refactoring my code.
+First, I would make it so that The constructor for Mountain does not require a list of Trip and Trail, and also that 
+Trip does not require a list of Run. I found that these constructors were frustrating as I would almost always add the 
+fields after instantiating the object, so the constructor parameters were useless anyway. Secondly, I would move
+Trips from being a field of mountain to a field of Mappy, and it could perhaps have a field of mountain. This would be
+less confusing and I could access trips from the main object of Mappy. Also, I would move certain search functions 
+that were implemented in my UI to the actual class. For example, searchTrailByName() should have been a function in 
+Mountain or Mappy that took a String and returned a Trail, that way I could use the function outside of the file it is 
+implemented in.
+
+Thanks for being such a great TA :)
