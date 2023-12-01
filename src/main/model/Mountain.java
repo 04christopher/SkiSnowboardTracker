@@ -58,6 +58,8 @@ public class Mountain {
     //EFFECTS: adds a trip to the list of trips done on this mountain
     public void addTrip(Trip trip) {
         trips.add(trip);
+        Event e = new Event("Added trip " + trip.getNameOrDate() + " to " + this.getName());
+        EventLog.getInstance().logEvent(e);
     }
 
     public ArrayList<Trail> getTrails() {

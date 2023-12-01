@@ -37,6 +37,8 @@ public class Trip {
             run.getTrail().getMountain().addToTotalRuns(1);
             run.getTrail().getMountain().addToTotalDistance(run.getTrail().getLength());
         }
+        Event e = new Event("Recorded trip " + this.getNameOrDate());
+        EventLog.getInstance().logEvent(e);
     }
 
     public void addRun(Run run) {

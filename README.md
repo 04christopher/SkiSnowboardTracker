@@ -38,3 +38,19 @@ would actually use in my active life, and I can share it with others in Vancouve
 - There is a header with text over it when the program starts (it is a picture of mountains).
 - To save the state of the file, click the save button on the first frame.
 - To reload the state of the file, click the load button on the first frame.
+
+
+## Phase 4: Task 2 (Event Log Sample)
+- Thu Nov 30 17:09:44 PST 2023: Added trail The Cut to Grouse
+- Thu Nov 30 17:09:44 PST 2023: Added trail Purgatory to Grouse
+- Thu Nov 30 17:09:44 PST 2023: Added trail Peak to Grouse
+- Thu Nov 30 17:09:44 PST 2023: Added trail Lower Peak to Grouse
+- Thu Nov 30 17:09:44 PST 2023: Added trail Expo Glades to Grouse
+- Thu Nov 30 17:09:44 PST 2023: Added mountain Grouse to map.
+- Thu Nov 30 17:09:48 PST 2023: Added mountain Grouse to map.
+- Thu Nov 30 17:09:48 PST 2023: Added trail The Cut to Grouse
+- Thu Nov 30 17:09:48 PST 2023: Added trail Purgatory to Grouse
+- Thu Nov 30 17:09:48 PST 2023: Added trail Jacob's Traijl to Grouse
+- Thu Nov 30 17:10:24 PST 2023: Recorded trip Vacation!
+- Thu Nov 30 17:10:41 PST 2023: Added trail EventLoggingTrail to Grouse
+- Thu Nov 30 17:10:53 PST 2023: Added mountain Seymour!!!! to map.

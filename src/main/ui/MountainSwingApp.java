@@ -7,18 +7,18 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import model.Mountain;
-import model.Run;
-import model.Trail;
-import model.Trip;
-import model.Mappy;
+import model.*;
+import model.Event;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -97,6 +97,19 @@ public class MountainSwingApp extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                Iterator eventIterator = EventLog.getInstance().iterator();
+
+                while (eventIterator.hasNext()) {
+                    Event ev = (Event) eventIterator.next();
+                    System.out.println(ev.getDate() + ": " + ev.getDescription());
+                }
+            }
+        });
     }
 
     //EFFECTS: saves the state of the application

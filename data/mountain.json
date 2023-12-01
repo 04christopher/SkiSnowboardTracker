@@ -1,41 +1,60 @@
 {
-    "mountains": [{
-        "runsDone": 0,
-        "totalDistanceSkied": 0,
-        "trips": [],
-        "name": "Grouse",
-        "trails": [
-            {
-                "difficulty": 1,
-                "descent": 201,
-                "nightrun": true,
-                "bestTime": 999999999,
-                "gladed": false,
-                "name": "The Cut",
-                "length": 1100,
-                "runTimes": []
-            },
-            {
-                "difficulty": 4,
-                "descent": 196,
-                "nightrun": false,
-                "bestTime": 999999999,
-                "gladed": false,
-                "name": "Purgatory",
-                "length": 538,
-                "runTimes": []
-            },
-            {
-                "difficulty": 3,
-                "descent": 4123,
-                "nightrun": true,
-                "bestTime": 999999999,
-                "gladed": false,
-                "name": "Jacob's Traijl",
-                "length": 1234,
-                "runTimes": []
-            }
-        ]
-    }],
+    "mountains": [
+        {
+            "runsDone": 2,
+            "totalDistanceSkied": 1638,
+            "trips": [],
+            "name": "Grouse",
+            "trails": [
+                {
+                    "difficulty": 1,
+                    "descent": 201,
+                    "nightrun": true,
+                    "bestTime": 0,
+                    "gladed": false,
+                    "name": "The Cut",
+                    "length": 1100,
+                    "runTimes": [0]
+                },
+                {
+                    "difficulty": 4,
+                    "descent": 196,
+                    "nightrun": false,
+                    "bestTime": 500,
+                    "gladed": false,
+                    "name": "Purgatory",
+                    "length": 538,
+                    "runTimes": [500]
+                },
+                {
+                    "difficulty": 3,
+                    "descent": 4123,
+                    "nightrun": true,
+                    "bestTime": 999999999,
+                    "gladed": false,
+                    "name": "Jacob's Traijl",
+                    "length": 1234,
+                    "runTimes": []
+                },
+                {
+                    "difficulty": 4,
+                    "descent": 312,
+                    "nightrun": false,
+                    "bestTime": 999999999,
+                    "gladed": true,
+                    "name": "EventLoggingTrail",
+                    "length": 123,
+                    "runTimes": []
+                }
+            ]
+        },
+        {
+            "runsDone": 0,
+            "totalDistanceSkied": 0,
+            "trips": [],
+            "name": "Seymour!!!!",
+            "trails": []
+        }
+    ],
     "name": "The Map"
 }

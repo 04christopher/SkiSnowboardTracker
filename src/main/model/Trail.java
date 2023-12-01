@@ -38,6 +38,8 @@ public class Trail {
         gladedTerrain = g;
         bestTime = 999999999;
 
+        Event e = new Event("Added trail " + this.name + " to " + mountain.getName());
+        EventLog.getInstance().logEvent(e);
     }
 
     // REQUIRES: runTimes is not empty

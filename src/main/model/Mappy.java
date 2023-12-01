@@ -27,6 +27,9 @@ public class Mappy {
 
     public void addMountain(Mountain mountain) {
         mountains.add(mountain);
+        //logging event
+        Event e = new Event("Added mountain " + mountain.getName() + " to map.");
+        EventLog.getInstance().logEvent(e);
     }
 
     public JSONObject toJson() {

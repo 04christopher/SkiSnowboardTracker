@@ -28,11 +28,11 @@ public class AddTrailFrame extends JFrame {
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        // Create a panel to hold the form components
+        //create a panel to hold the form components
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(7, 2));
 
-        // Add components to the panel
+        //add components to the panel
         panel.add(new JLabel("Name:"));
         nameField = new JTextField();
         panel.add(nameField);
